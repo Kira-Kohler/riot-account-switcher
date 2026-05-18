@@ -5,9 +5,9 @@ fn main() {
         res.set("FileDescription", "K1R4LABS Riot Account Switcher");
         res.set("ProductName", "K1R4LABS — Riot Account Switcher");
         res.set("CompanyName", "K1R4LABS");
-        res.set("LegalCopyright", "© 2026 K1R4LABS");
-        res.set("FileVersion", "1.0.0.0");
-        res.set("ProductVersion", "1.0.0");
+        res.set("LegalCopyright", "© 2026 by Kira Kohler — All rights reserved.");
+        res.set("FileVersion", "1.1.0.0");
+        res.set("ProductVersion", "1.1.0");
         res.set_manifest(
             r#"<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
