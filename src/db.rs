@@ -73,8 +73,18 @@ impl Database {
 }
 
 pub fn db_path() -> PathBuf {
-    std::env::current_exe()
-        .ok()
-        .and_then(|p| p.parent().map(|d| d.join("accounts.db")))
+    let exe = std::env::current_exe().unwrap_or_default();
+    let in_msix = exe.to_string_lossy().to_lowercase().contains("windowsapps");
+    if in_msix {
+        if let Ok(local) = std::env::var("LOCALAPPDATA") {
+            let dir = PathBuf::from(local)
+                .join("K1R4LABS")
+                .join("RiotAccountSwitcher");
+            let _ = std::fs::create_dir_all(&dir);
+            return dir.join("accounts.db");
+        }
+    }
+    exe.parent()
+        .map(|d| d.join("accounts.db"))
         .unwrap_or_else(|| PathBuf::from("accounts.db"))
 }

@@ -2,3 +2,7 @@
 .cargo/
 *.db
 *.riotacc
+/installer/
+/privacy-policy.txt
+/store-listing-filled.csv
+/installer.iss
